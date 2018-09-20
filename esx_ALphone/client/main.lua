@@ -94,7 +94,7 @@ function ClosePhone()
   SetNuiFocus(false)
 
   ClearPedTasks(playerPed)
-
+  DetachEntity(CellphoneObject)
   DeleteObject(CellphoneObject)
 
 end
@@ -454,6 +454,7 @@ Citizen.CreateThread(function()
         })
 		ClearPedTasks(GetPlayerPed(-1))
 		DetachEntity(CellphoneObject)
+		DeleteObject(CellphoneObject)
       end
 
     end
@@ -543,6 +544,7 @@ Citizen.CreateThread(function()
         })
 			ClearPedTasks(GetPlayerPed(-1))
 		    DetachEntity(CellphoneObject)
+		    DeleteObject(CellphoneObject)
 			
 		end
 
