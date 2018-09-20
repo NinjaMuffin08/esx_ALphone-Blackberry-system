@@ -447,11 +447,13 @@ Citizen.CreateThread(function()
         })
       end
 
-      if IsControlJustReleased(0, Keys['BACKSPACE']) then
+         if IsControlJustReleased(0, Keys['BACKSPACE']) then
         SendNUIMessage({
           controlPressed = true,
           control        = 'BACKSPACE'
         })
+		ClearPedTasks(GetPlayerPed(-1))
+		DetachEntity(CellphoneObject)
       end
 
     end
@@ -527,4 +529,22 @@ Citizen.CreateThread(function()
     end
 
   end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(10)
+
+		
+		if IsControlJustReleased(0, Keys['X']) then
+			 SendNUIMessage({
+          controlPressed = true,
+          control        = 'BACKSPACE'
+        })
+			ClearPedTasks(GetPlayerPed(-1))
+		    DetachEntity(CellphoneObject)
+			
+		end
+
+	end
 end)
